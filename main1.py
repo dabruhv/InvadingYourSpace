@@ -30,45 +30,13 @@ for i in range(2):
 while not gameover:
     clock.tick(60)
     
-    #Input Section----------------------------------------------------
-    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             gameover = True
-            
-        if event.type == pygame.KEYDOWN:import pygame
-
-pygame.init()
-pygame.display.set_caption("space invaders")
-screen = pygame.display.set_mode((800,800))
-clock = pygame.time.Clock()
-gameover = False
-
-#player variables-----------------------
-xpos = 400
-ypos = 750
-moveLeft = False
-moveRight = False
-
-
-class Alien:
-    def __init__(self, xpos, ypos):
-        self.xpos = xpos
-        self.ypos = ypos
-        self.isAlive = True
-    def draw(self):
-        pygame.draw.rect(screen,(250,250,250),(self.xpos,self.ypos,40,40))
-        
-armada = []
-for i in range(2):
-    for j in range(4):
-        armada.append(Alien(j*60+50, i*50+50))
-
-
-while not gameover:
-    clock.tick(60)
+    
     
     #Input Section--------------------------------
+        if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 moveLeft = True
         elif event.type == pygame.KEYUP:
